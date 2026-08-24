@@ -53,7 +53,7 @@
 ### Installation
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/Watsson/SlimeShooter.git
+   git clone https://github.com/NessaRNG/SlimeShooter.git
    ```
 2. Open **Godot Engine 4**.
 3. Click on the **Import** button in the Project Manager.
