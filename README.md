@@ -4,6 +4,7 @@
 
 **A fast-paced top-down survival shooter built with Godot 4.**
 
+[![Play on Itch.io](https://img.shields.io/badge/Play_on-itch.io-fa5c5c?style=for-the-badge&logo=itch.io&logoColor=white)](https://watsson69.itch.io/slimeshooter)
 [![Godot Engine](https://img.shields.io/badge/Godot_4.x-478cbf?style=for-the-badge&logo=godot-engine&logoColor=white)](https://godotengine.org)
 [![GDScript](https://img.shields.io/badge/GDScript-478cbf?style=for-the-badge&logo=godot-engine&logoColor=white)]()
 [![Platform](https://img.shields.io/badge/Platform-Desktop%20%7C%20Mobile-green?style=for-the-badge)]()
@@ -12,6 +13,13 @@
 <img src="icon.png" width="150" alt="SlimeShooter Icon"/>
 
 </div>
+
+---
+
+## 🎮 Play Now
+
+You can play the game directly in your browser or download it from itch.io:  
+👉 **[Play SlimeShooter on Itch.io](https://watsson69.itch.io/slimeshooter)**
 
 ---
 
