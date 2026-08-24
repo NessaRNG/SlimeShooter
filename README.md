@@ -19,13 +19,13 @@
 ## 🎮 Play Now
 
 You can play the game directly in your browser on itch.io:  
-👉 **[Play SlimeShooter on Itch.io](https://watsson69.itch.io/slimeshooter)**
+👉 **[Play Slime Shooter on Itch.io](https://watsson69.itch.io/slimeshooter)**
 
 ---
 
 ## 🌟 Overview
 
-**SlimeShooter** is an intense, twin-stick style survival action game where you face endless waves of colorful slime enemies. Your goal is to survive as long as possible by shooting enemies, collecting XP, and leveling up your weapons. The game features an advanced Dynamic Difficulty Adjustment (DDA) system that scales the challenge perfectly to your skill level.
+**Slime Shooter** is an intense, twin-stick style survival action game where you face endless waves of colorful slime enemies. Your goal is to survive as long as possible by shooting enemies, collecting XP, and leveling up your weapons. The game features an advanced Dynamic Difficulty Adjustment (DDA) system that scales the challenge perfectly to your skill level.
 
 ## 🎯 Key Features
 
