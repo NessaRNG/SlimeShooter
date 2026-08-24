@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🟢 SlimeShooter
+# <img src="slime_green.png" width="36" alt="Slime"/> Slime Shooter
 
 **A fast-paced top-down survival shooter built with Godot 4.**
 
