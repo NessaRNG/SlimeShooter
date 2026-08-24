@@ -18,7 +18,7 @@
 
 ## 🎮 Play Now
 
-You can play the game directly in your browser or download it from itch.io:  
+You can play the game directly in your browser on itch.io:  
 👉 **[Play SlimeShooter on Itch.io](https://watsson69.itch.io/slimeshooter)**
 
 ---
