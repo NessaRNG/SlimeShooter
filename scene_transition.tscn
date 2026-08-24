@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxabcmabxabcm"]
+
+[ext_resource type="Script" uid="uid://dwmoaxa3ic310" path="res://scene_transition.gd" id="1_ts"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_boo"]
+
+[node name="SceneTransition" type="CanvasLayer"]
+process_mode = 3
+layer = 120
+script = ExtResource("1_ts")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1920.0
+offset_right = 1920.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06, 0.08, 0.18, 1)
+
+[node name="HappyBoo" parent="ColorRect" instance=ExtResource("2_boo")]
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)

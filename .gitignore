@@ -1,0 +1,22 @@
+# Godot 4+ specific ignores
+.godot/
+!/.godot/extension_list.cfg
+
+# Build output
+Output/
+Export/
+*.a
+*.apk
+*.arm64-v8a.so
+*.armeabi-v7a.so
+*.x86.so
+*.x86_64.so
+*.pe
+*.pck
+*.tmp
+
+# Mac
+.DS_Store
+
+# AI Agents
+.agents/

@@ -1,0 +1,288 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccppmfvqvnewp"]
+
+[ext_resource type="Script" uid="uid://bvhvgpo4b3ngv" path="res://upgrade_menu.gd" id="1_qvtwy"]
+[ext_resource type="FontFile" uid="uid://dav437jkhabou" path="res://Fonts/PressStart2P-Regular.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="card_normal"]
+bg_color = Color(0.06, 0.08, 0.18, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.28, 0.52, 0.88, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.1, 0.2, 0.6, 0.4)
+shadow_size = 16
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxFlat" id="card_hover"]
+bg_color = Color(0.1, 0.13, 0.26, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.45, 0.75, 1.0, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.2, 0.4, 0.9, 0.55)
+shadow_size = 22
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxFlat" id="card_pressed"]
+bg_color = Color(0.03, 0.04, 0.1, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.4, 0.7, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+
+[node name="UpgradeMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_qvtwy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.03, 0.08, 0.8)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0.35, 0.24, 0.0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("2_font")
+text = "CHOOSE AN UPGRADE"
+horizontal_alignment = 1
+
+[node name="CardsRow" type="HBoxContainer" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Card1" type="Button" parent="CenterContainer/VBox/CardsRow"]
+custom_minimum_size = Vector2(320, 420)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("card_normal")
+theme_override_styles/hover = SubResource("card_hover")
+theme_override_styles/pressed = SubResource("card_pressed")
+
+[node name="Vbox" type="VBoxContainer" parent="CenterContainer/VBox/CardsRow/Card1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="CenterContainer/VBox/CardsRow/Card1/Vbox"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CatLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card1/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.72, 1.0, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "[DEF]"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card1/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_font")
+text = "Upgrade"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DescLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card1/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.82, 1.0, 0.85)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StarsLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card1/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.72, 1.0, 1)
+theme_override_font_sizes/font_size = 9
+theme_override_fonts/font = ExtResource("2_font")
+text = "- - - - -"
+horizontal_alignment = 1
+
+[node name="Card2" type="Button" parent="CenterContainer/VBox/CardsRow"]
+custom_minimum_size = Vector2(320, 420)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("card_normal")
+theme_override_styles/hover = SubResource("card_hover")
+theme_override_styles/pressed = SubResource("card_pressed")
+
+[node name="Vbox" type="VBoxContainer" parent="CenterContainer/VBox/CardsRow/Card2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="CenterContainer/VBox/CardsRow/Card2/Vbox"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CatLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card2/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.72, 1.0, 1)
+theme_override_font_sizes/font_size = 9
+theme_override_fonts/font = ExtResource("2_font")
+text = "[DEF]"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card2/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_font")
+text = "Upgrade"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DescLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card2/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.82, 1.0, 0.85)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StarsLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card2/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.72, 1.0, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "- - - - -"
+horizontal_alignment = 1
+
+[node name="Card3" type="Button" parent="CenterContainer/VBox/CardsRow"]
+custom_minimum_size = Vector2(320, 420)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("card_normal")
+theme_override_styles/hover = SubResource("card_hover")
+theme_override_styles/pressed = SubResource("card_pressed")
+
+[node name="Vbox" type="VBoxContainer" parent="CenterContainer/VBox/CardsRow/Card3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="CenterContainer/VBox/CardsRow/Card3/Vbox"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CatLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card3/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.72, 1.0, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "[DEF]"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card3/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_font")
+text = "Upgrade"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DescLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card3/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.82, 1.0, 0.85)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StarsLabel" type="Label" parent="CenterContainer/VBox/CardsRow/Card3/Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.72, 1.0, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_font")
+text = "- - - - -"
+horizontal_alignment = 1

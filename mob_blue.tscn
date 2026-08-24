@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8k2j7vpfuo4g"]
+
+[ext_resource type="Script" uid="uid://ojg88pe48jk5" path="res://mob.gd" id="1_u6qga"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_jp4yw"]
+[ext_resource type="Texture2D" path="res://slime_blue.png" id="3_blue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blue"]
+radius = 45.0
+
+[node name="MobBlue" type="CharacterBody2D"]
+motion_mode = 1
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_u6qga")
+speed = 170.0
+health = 3
+xp_value = 1
+
+[node name="Slime" parent="." instance=ExtResource("2_jp4yw")]
+unique_name_in_owner = true
+scale = Vector2(0.22, 0.22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CircleShape2D_blue")
+debug_color = Color(0.4, 0.6, 1, 0.42)
+
+[editable path="Slime"]
+[editable path="Slime/Anchor"]
+
+[node name="SlimeBody" parent="Slime/Anchor" index="0"]
+texture = ExtResource("3_blue")
+offset = Vector2(0, -36)
+
+[node name="SlimeBodyHurt" parent="Slime/Anchor/SlimeBody" index="0"]
+texture = ExtResource("3_blue")
+modulate = Color(1, 0.7, 0.7, 0.5)
+offset = Vector2(0, -36)
+
+[node name="Face" parent="Slime/Anchor" index="1"]
+position = Vector2(0, -25)
+
+[node name="SlimeFace" parent="Slime/Anchor/Face" index="0"]
+modulate = Color(0.7, 0.85, 1, 1)
+scale = Vector2(4.5, 4.5)

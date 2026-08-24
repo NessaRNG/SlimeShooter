@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dun1cpardk2xw"]
+
+[ext_resource type="Script" uid="uid://dsgxioo8wstff" path="res://game.gd" id="1_qclsr"]
+[ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://player.tscn" id="2_a7q7f"]
+[ext_resource type="PackedScene" uid="uid://ccppmfvqvnewp" path="res://upgrade_menu.tscn" id="4_qqaft"]
+[ext_resource type="PackedScene" uid="uid://lc3e1cg0vj4n" path="res://pause_menu.tscn" id="5_edxvn"]
+[ext_resource type="PackedScene" uid="uid://bhmsqk1kdnc8j" path="res://game_over.tscn" id="6_pk6fm"]
+[ext_resource type="Script" uid="uid://bn6r2dfipafnx" path="res://trees/tree_spawner.gd" id="7_spwn"]
+[ext_resource type="Script" path="res://trees/ground_painter.gd" id="8_grnd"]
+[ext_resource type="Script" path="res://virtual_joystick.gd" id="9_vjoy"]
+
+[sub_resource type="Curve2D" id="Curve2D_cp6e5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1055, -697, 0, 0, 0, 0, 1057, -697, 0, 0, 0, 0, 1057, 671, 0, 0, 0, 0, -1055, 663, 0, 0, 0, 0, -1055, -689)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=1131996093]
+y_sort_enabled = true
+script = ExtResource("1_qclsr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1039455483]
+wait_time = 0.5
+autostart = true
+
+[node name="Player" parent="." unique_id=130061232 instance=ExtResource("2_a7q7f")]
+unique_name_in_owner = true
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=808323122]
+curve = SubResource("Curve2D_cp6e5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=1210331329]
+unique_name_in_owner = true
+position = Vector2(-1055, -697)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=532902142]
+layer = -32
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1907958756]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.35, 0.52, 0.22, 1)
+
+[node name="MoveJoystick" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_vjoy")
+
+[node name="AimJoystick" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_vjoy")
+action_left = "aim_left"
+action_right = "aim_right"
+action_up = "aim_up"
+action_down = "aim_down"
+[node name="GroundPainter" type="Node2D" parent="." unique_id=1018576625]
+z_index = -100
+script = ExtResource("8_grnd")
+
+[node name="TreeSpawner" type="Node2D" parent="." unique_id=1017576625]
+script = ExtResource("7_spwn")
+
+[node name="UpgradeMenu" parent="." unique_id=1302558855 instance=ExtResource("4_qqaft")]
+
+[node name="PauseMenu" parent="." unique_id=920981609 instance=ExtResource("5_edxvn")]
+
+[node name="GameOver" parent="." unique_id=917860727 instance=ExtResource("6_pk6fm")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
